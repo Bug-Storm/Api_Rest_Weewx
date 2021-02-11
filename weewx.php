@@ -1,5 +1,5 @@
 <?php
-include './api.php';
+
 
 
 class weewx{
