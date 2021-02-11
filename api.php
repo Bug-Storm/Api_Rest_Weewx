@@ -10,14 +10,14 @@ header("Access-Control-Allow-Headers: Content-Type, Access-Control-Allow-Headers
 if ($_SERVER['REQUEST_METHOD'] == 'GET') {
     // On inclut les fichiers de configuration et d'accès aux données
     include_once './Database.php';
-    include_once './Produits.php';
+    include_once './weewx.php';
 
     // On instancie la base de données
     $database = new Database();
     $db = $database->getConnection();
 
-    // On instancie les produits
-    $produit = new Produits($db);
+    // On instancie les weewx
+    $produit = new weewx($db);
 
 
     //Make sure that our query string parameters exist.

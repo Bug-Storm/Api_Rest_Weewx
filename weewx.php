@@ -1,8 +1,8 @@
 <?php
-include './lire_un.php';
+include './api.php';
 
 
-class Produits{
+class weewx{
     // Connexion
     private $connexion;
     private $table = "archive";
@@ -71,7 +71,7 @@ class Produits{
      * @return void
     
     
-     * Lecture des produits
+     * Lecture des weewx
      *
      * @return void
      */
