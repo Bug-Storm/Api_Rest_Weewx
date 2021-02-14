@@ -2,8 +2,8 @@
 class Database{
     // Connexion à la base de données
     private $host = "localhost";
-    private $db_name = "api_rest";
-    private $username = "root";
+    private $db_name = "";
+    private $username = "";
     private $password = "";
     public $connexion;
 
