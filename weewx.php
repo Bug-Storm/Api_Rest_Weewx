@@ -67,12 +67,37 @@ class Weewx{
 
     }
 
-    /**
+     /**
      * Créer un produit
      *
      * @return void
+     */
+    public function creer(){
+
+        // Ecriture de la requête SQL en y insérant le nom de la table
+        $sql = "INSERT INTO " . $this->tableuser . " SET  id=:id, username=:username, apikey=:apikey, apisignature=:apisignature, created_at=:created_at";
+
+        // Préparation de la requête
+        $query = $this->connexion->prepare($sql);
+
+       
+
+        // Ajout des données protégées
+        $query->bindParam(':id', $this->id);
+        $query->bindParam(':username', $this->username);
+        $query->bindParam(':apikey', $this->apikey);
+        $query->bindParam(':apisignature', $this->apisignature);
+        $query->bindParam(':created_at', $this->created_at);
+
+        // Exécution de la requête
+        if($query->execute()){
+            return true;
+        }
+        return false;
+    }
+
     
-    
+    /*
      * Lecture des weewx
      *
      * @return void
