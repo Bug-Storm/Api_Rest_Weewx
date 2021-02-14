@@ -1,5 +1,6 @@
 <?php
 
+
 class Weewx{
     // Connexion
     private $connexion;
