@@ -1,8 +1,8 @@
 <?php
 
 // On inclut les fichiers de configuration et d'accès aux données
-include_once './Database.php';
-include_once './Weewx.php';
+include_once 'Database.php';
+include_once 'weewx.php';
 
 //Bienvenue    
 echo "---------------------------------------------------------------------------------------------------------------------------- \n";
