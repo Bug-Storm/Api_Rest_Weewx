@@ -98,7 +98,7 @@ end timestamp = ` la Date/L'heure de la fin  que vous voulez récupérer  `
 
 
 
-Vous allez devrez avoir l'url comme ça: 
+Vous devrez avoir l'url comme ça: 
 
 `https://mydnsadresse/Api_Rest_Weewx/api.php?t=1613422447&id=1&apikey=555&apisignature=555&starttimestamp=1613343600&endtimestamp=1613419937 `
 
