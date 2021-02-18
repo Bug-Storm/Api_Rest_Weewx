@@ -37,26 +37,26 @@ On peut maintenant se placer dans le répertoire du script afin de modifier le f
 
 __Creation de la table ` users`__
 
-En premier vous allez rentrer dans PHPMYADMIN, vous allez sélectionner la BDD Weewx et vous allez dans ` Import `.  
+En premier vous allez rentrer dans `PHPMYADMIN`, vous allez sélectionner la BDD `Weewx` et vous allez dans ` Import `.  
 
 Vous allez sélectionner le fichier ` users.sql`.
 
-Patienter quelques secondes puis vérifié que la table `user ` a été bien créée.  
+Patienter quelques secondes puis vérifié que la table `user` a été bien créée.  
 
  __Connection a la base des données__ 
 
  * Si vous avez une base de données MySQL, il va falloir renseigner les paramètres de connexion à la base :
 
-  `
-  ` private $host = 'localhost'; `  
-   `private $db_name = '';`   
-   `private $username = ''; `  
-   `private $password = ''; `
-   `
+  
+  ` private $host = 'localhost'; `    
+   `private $db_name = '';`     
+   `private $username = ''; `    
+   `private $password = ''; `  
+   
 
 ----------------------------------------------------------------------------------------------------------------------------------------
 
-  `* private $host: `   qui est l'adresse de l'hôte de la base de données. Probablement localhost si la base de données est hébergée sur votre Raspberry Pi.  
+  `* private $host:`   qui est l'adresse de l'hôte de la base de données. Probablement localhost si la base de données est hébergée sur votre Raspberry Pi.  
 
  `* private $db_name:`   le nom de la base de données. Par défaut WeeWX la nomme ` weewx `.  
 
@@ -95,5 +95,11 @@ api signature = ` L'api signature qu'a été crée avec l'user `
 start timestamp = ` la Date/L'heure du début que vous voulez récupérer  `
 
 end timestamp = ` la Date/L'heure de la fin  que vous voulez récupérer  `
+
+
+
+Vous allez devrez avoir l'url comme ça: 
+
+`https://mydnsadresse/Api_Rest_Weewx/api.php?t=1613422447&id=1&apikey=555&apisignature=555&starttimestamp=1613343600&endtimestamp=1613419937 `
 
 
