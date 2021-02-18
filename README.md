@@ -28,10 +28,10 @@ __Description__
  __Configuration__
 
  ` cd /var/www/html/Api_Rest_Weewx `  
- s
+ 
  ` nano Database.php `
 
- _Connection a la base des données_ 
+ __Connection a la base des données__ 
 
  * Si vous avez une base de données MySQL, il va falloir renseigner les paramètres de connexion à la base :
 
@@ -41,6 +41,8 @@ __Description__
    private $username = '';   
    private $password = '';  
    `
+
+
 
   ` * private $host: `   qui est l'adresse de l'hôte de la base de données. Probablement localhost si la base de données est hébergée sur votre Raspberry Pi.  
 
@@ -54,9 +56,13 @@ __Description__
  __Creation d'un nouveau user__
  
  Pour créer un nouveau user il suffit d'ouvrir une ligne de commande et de taper:
-php newuser.php
 
-puis vous allez rentre le Nom que vous voulez. Le script va donc créer un Id + une API Key et une API Signature.  
+ ` php newuser.php `
+
+`![Simplon.co](https://i.imgur.com/tsw3Hqe.gif)`
+
+
+puis vous allez rentre le Nom que vous voulez.  Le script va donc créer un Id + une API Key et une API Signature.  
 
 Une fois le nouveau user créer, vous pouvez copier les infos.
 
