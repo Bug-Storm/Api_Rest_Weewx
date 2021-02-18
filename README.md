@@ -59,10 +59,12 @@ __Description__
 
  ` php newuser.php `
 
-`![Simplon.co](https://i.imgur.com/tsw3Hqe.gif)`
+![Simplon.co](https://i.imgur.com/tsw3Hqe.gif)
 
 
 puis vous allez rentre le Nom que vous voulez.  Le script va donc créer un Id + une API Key et une API Signature.  
 
 Une fois le nouveau user créer, vous pouvez copier les infos.
+
+
 
