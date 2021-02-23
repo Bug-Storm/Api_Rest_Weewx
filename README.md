@@ -103,3 +103,6 @@ Vous devrez avoir l'url comme ça:
 `https://mydnsadresse/Api_Rest_Weewx/api.php?t=1613422447&id=1&apikey=555&apisignature=555&starttimestamp=1613343600&endtimestamp=1613419937 `
 
 
+
+
+Merci  à https://nouvelle-techno.fr/actualites/live-coding-creer-une-api-rest
