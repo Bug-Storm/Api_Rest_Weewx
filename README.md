@@ -27,13 +27,6 @@ __Description__
 
  ` git clone https://github.com/Bug-Storm/Api_Rest_Weewx `    
 
- __Configuration__
-
-On peut maintenant se placer dans le répertoire du script afin de modifier le fichier de configuration.
-
- ` cd /var/www/html/Api_Rest_Weewx `  
- 
- ` nano Database.php `
 
 __Creation de la table ` users`__
 
@@ -43,7 +36,19 @@ Vous allez sélectionner le fichier ` users.sql`.
 
 Patienter quelques secondes puis vérifié que la table `user` a été bien créée.  
 
+
+ __Configuration__
+
+On peut maintenant se placer dans le répertoire du script afin de modifier le fichier de configuration.
+
+ ` cd /var/www/html/Api_Rest_Weewx `  
+ 
+  ` nano Database.php `
+
+
  __Connection a la base des données__ 
+
+
 
  * Si vous avez une base de données MySQL, il va falloir renseigner les paramètres de connexion à la base :
 
@@ -81,8 +86,19 @@ Une fois le nouveau user créer, vous pouvez laisser la ligne de commande ouvert
 
 __Recuperation des données__
 
-Pour que l'api puisse bien récupérer les données de la BDD, vous avez besoin de 6 paramètres: 
+Pour que l'api puisse bien récupérer les données de la BDD, vous avez besoin de 4 paramètres pour le mode current: 
 
+---------------------------------------------------------------------
+t =  ` Timestamp(valable 5m)`
+
+id = ` L'id correspondent au user `
+
+api key = ` L'api Key qu'a été crée avec l'user `
+
+api signature = ` L'api signature qu'a été crée avec l'user `
+
+--------------------------------------------------------------------
+Et pour le mode historic vous avez besoin de 6 paramètres:
 
 t =  ` Timestamp(valable 5m)`
 
@@ -96,13 +112,18 @@ start timestamp = ` la Date/L'heure du début que vous voulez récupérer  `
 
 end timestamp = ` la Date/L'heure de la fin  que vous voulez récupérer  `
 
+------------------------------------------------------------------------
 
+Vous devrez avoir l'url comme ça pour le mode current: 
 
-Vous devrez avoir l'url comme ça: 
+`https://mydnsadresse/Api_Rest_Weewx/current.php?t=1613422447&id=1&apikey=555&apisignature=555 `
 
-`https://mydnsadresse/Api_Rest_Weewx/api.php?t=1613422447&id=1&apikey=555&apisignature=555&starttimestamp=1613343600&endtimestamp=1613419937 `
+-------------------------------------------------------------------------
 
+Vous devrez avoir l'url comme ça pour le mode historic:
 
+`https://mydnsadresse/Api_Rest_Weewx/historic.php?t=1613422447&id=1&apikey=555&apisignature=555&starttimestamp=1613343600&endtimestamp=1613419937 `
 
+--------------------------------------------------------------------------
 
 Merci  à https://nouvelle-techno.fr/actualites/live-coding-creer-une-api-rest
