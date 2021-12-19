@@ -97,13 +97,35 @@ class Weewx{
         return false;
     }
 
-    
+
     /*
-     * Lecture des weewx
+     * Lecture avec le derner record sur la BDD -- 1 seul donnée 
      *
      * @return void
      */
-    public function lire(){
+      public function current(){
+        // On écrit la requête
+        // On écrit la requête
+        $sql = "SELECT * FROM " . $this->table .  " ORDER BY dateTime DESC LIMIT 1";
+        
+        // On prépare la requête
+        $query = $this->connexion->prepare( $sql );
+        
+        
+   
+        // On exécute la requête
+        $query->execute();
+
+        return $query;
+    }
+     
+    
+    /*
+     * Lecture des historic 
+     *
+     * @return void
+     */
+    public function historic(){
         // On écrit la requête
         // On écrit la requête
         $sql = "SELECT * FROM " . $this->table .  " WHERE dateTime BETWEEN :dateTime AND :dateTime1 ";
