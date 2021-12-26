@@ -1,7 +1,6 @@
 # Api_Rest_Weewx
 
 
-
 # Préambule  
 
 __Description__  
@@ -28,14 +27,6 @@ __Description__
  ` git clone https://github.com/Bug-Storm/Api_Rest_Weewx `    
 
 
-__Creation de la table ` users`__
-
-En premier vous allez rentrer dans `PHPMYADMIN`, vous allez sélectionner la BDD `Weewx` et vous allez dans ` Import `.  
-
-Vous allez sélectionner le fichier ` users.sql`.
-
-Patienter quelques secondes puis vérifié que la table `user` a été bien créée.  
-
 
  __Configuration__
 
@@ -53,7 +44,7 @@ On peut maintenant se placer dans le répertoire du script afin de modifier le f
  * Si vous avez une base de données MySQL, il va falloir renseigner les paramètres de connexion à la base :
 
   
-  ` private $host = 'localhost'; `    
+  ` private $host = ''; `    
    `private $db_name = '';`     
    `private $username = ''; `    
    `private $password = ''; `  
@@ -63,7 +54,7 @@ On peut maintenant se placer dans le répertoire du script afin de modifier le f
 
   `* private $host:`   qui est l'adresse de l'hôte de la base de données. Probablement localhost si la base de données est hébergée sur votre Raspberry Pi.  
 
- `* private $db_name:`   le nom de la base de données. Par défaut WeeWX la nomme ` weewx `.  
+ `* private $db_name:`   le nom de la base de données. Par défaut WeeWX c'est  ` weewx `.  
 
  `* private $username:`   le nom d'utilisateur qui a accès à la BDD.
 
@@ -78,6 +69,13 @@ On peut maintenant se placer dans le répertoire du script afin de modifier le f
 
 ![Simplon.co](https://i.imgur.com/tsw3Hqe.gif)
 
+
+*************************************************************************************************************************
+Si vous n'avez pas encore la table users, cela va se faire automatiquement.
+-------------------------------------------------------------------------------------------------------------------------
+Au cas où il y a un erreur, vous avez le fichier `users.sql ` . Cela vous permet d'importer le fichier sur phpmyadmin ;)
+------------------------------------------------------------------------------------------------------------------------
+**************************************************************************************************************************
 
 puis vous allez rentrer le Nom que vous voulez.  Le script va donc créer un Id + une API Key et une API Signature.  
 
@@ -126,4 +124,4 @@ Vous devrez avoir l'url comme ça pour le mode historic:
 
 --------------------------------------------------------------------------
 
-Merci  à https://nouvelle-techno.fr/actualites/live-coding-creer-une-api-rest
+Merci à https://nouvelle-techno.fr/actualites/live-coding-creer-une-api-rest
