@@ -44,10 +44,69 @@ class Weewx{
         $this->connexion = $db;
     }
 
+   
+ //public function table() Cela nous permet de verifier si la tabler "users" existe ou pas 
+
+    public function table(){
+        // On écrit la requête
+        
+      $sql= "SELECT 1 FROM " . $this->tableuser . " LIMIT 1";
+
+
+
+        // On prépare la requête
+        $query = $this->connexion->prepare($sql);
+
+        // On attache l'id
+        $query->bindParam(1, $this->id);
+
+        // On exécute la requête
+        $query->execute();
+
+         // on récupère la ligne
+        $row = $query->fetch(PDO::FETCH_ASSOC);
+       
+        // On hydrate l'objet
+    $this->id = $row['id'];
+    if($row !== FALSE){
+
+} else{
+
+    // Si la table "users" n'existe pas, on va la creer.
+
+        $sql = "CREATE TABLE IF NOT EXISTS `users` (
+            `id` int(11) NOT NULL AUTO_INCREMENT,
+            `username` varchar(50) NOT NULL,
+            `apikey` varchar(255) NOT NULL,
+            `apisignature` varchar(255) NOT NULL,
+            `created_at` datetime DEFAULT NULL,
+            PRIMARY KEY (`id`),
+            UNIQUE KEY `username` (`username`)
+          ) ENGINE=MyISAM AUTO_INCREMENT=56 DEFAULT CHARSET=utf8;
+          COMMIT";
+
+          
+     // Préparation de la requête
+     $query = $this->connexion->prepare($sql);
+
+        // Exécution de la requête
+        if($query->execute()){
+            return true;
+        }
+        return false;
+    }
+    }
+
+    
+//public function getuser() nous permet de recuperer l'user avec les parametres 
+//$this->id = $row['id'];
+//$this-> apikey  = $row ['apikey'];
+//$this-> apisignature = $row ['apisignature'];
+
 
     public function getuser(){
         // On écrit la requête
-        $sql = "SELECT id, apikey, apisignature FROM " .$this->tableuser. " LIMIT 1";
+        $sql = "SELECT id, apikey, apisignature FROM ".$this->tableuser. " LIMIT 1" ;
 
         // On prépare la requête
         $query = $this->connexion->prepare($sql);
@@ -69,7 +128,7 @@ class Weewx{
     }
 
      /**
-     * Créer un produit
+     * Créer un user
      *
      * @return void
      */
