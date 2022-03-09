@@ -121,8 +121,9 @@ if ($_SERVER['REQUEST_METHOD'] == 'GET') {
                     while ($row = $stmt->fetch(PDO::FETCH_ASSOC)) {
                         extract($row);
 
-                        //Convert to US units//
+                        //Convert to Metric units//
 
+                      
                         if ($usUnits == 1) { 
 
                             //Rain//
@@ -134,228 +135,228 @@ if ($_SERVER['REQUEST_METHOD'] == 'GET') {
 
                             
 
-                            //Temp//
+                        //Temp//
 
-                            $appTemp =   is_null($appTemp) ? NULL : (float) round((($appTemp -32)/1.8,3);
-                            $dewpoint =  is_null($dewpoint) ? NULL : (float) round((($dewpoint -32)/1.8,3);
-                            $outTemp =   is_null($outTemp) ? NULL : (float) round((($outTemp -32)/1.8,3);
-                            $inTemp =    is_null($inTemp) ? NULL : (float) round((($inTemp -32)/1.8,3);
-                            $inDewpoint =is_null($inDewpoint) ? NULL : (float) round((($inDewpoint -32)/1.8,3);
-                            $heatindex = is_null($heatindex) ? NULL : (float) round((($heatindex -32)/1.8,3);
-                            $humidex =   is_null($humidex) ? NULL : (float) round((($humidex -32)/1.8,3);
-                            $windchill = is_null($windchill) ? NULL : (float) round((($windchill -32)/1.8,3);
-                            $Tx =        is_null($Tx) ? NULL : (float)round((($Tx  -32)/1.8,3);
-                            $Tn =        is_null($Tn) ? NULL : (float)round((($Tn -32)/1.8,3);
-
-
-                            //ExtraTemp//
-                            $extraTemp1 = is_null($extraTemp1) ? NULL : (float)round((($extraTemp1 -32)/1.8,3);
-                            $extraTemp2 = is_null($extraTemp2) ? NULL : (float) round((($extraTemp2 -32)/1.8,3);
-                            $extraTemp3 = is_null($extraTemp3) ? NULL : (float) round((($extraTemp3 -32)/1.8,3);
-                            $extraTemp4 = is_null($extraTemp4) ? NULL : (float)round((($extraTemp4 -32)/1.8,3);
-                            $extraTemp5 = is_null($extraTemp5) ? NULL : (float)round((($extraTemp5 -32)/1.8,3);
-                            $extraTemp6 = is_null($extraTemp6) ? NULL : (float)round((($extraTemp6 -32)/1.8,3);
-                            $extraTemp7 = is_null($extraTemp7) ? NULL : (float)round((($extraTemp7 -32)/1.8,3);
-                            $extraTemp8 = is_null($extraTemp8) ? NULL : (float)round((($extraTemp8 -32)/1.8,3);
-
-                            //LeafTemp//
-                            $leafTemp1 = is_null($leafTemp1) ? NULL : (float)round((($leafTemp1  -32)/1.8,3);
-                            $leafTemp2 = is_null($leafTemp2) ? NULL : (float) round((($leafTemp2 -32)/1.8,3);
+                        $appTemp =   is_null($appTemp) ? NULL : (float) round(($appTemp -32)/1.8,3);
+                        $dewpoint =  is_null($dewpoint) ? NULL : (float) round(($dewpoint -32)/1.8,3);
+                        $outTemp =   is_null($outTemp) ? NULL : (float) round(($outTemp -32)/1.8,3);
+                        $inTemp =    is_null($inTemp) ? NULL : (float) round(($inTemp -32)/1.8,3);
+                        $inDewpoint =is_null($inDewpoint) ? NULL : (float) round(($inDewpoint -32)/1.8,3);
+                        $heatindex = is_null($heatindex) ? NULL : (float) round(($heatindex -32)/1.8,3);
+                        $humidex =   is_null($humidex) ? NULL : (float) round(($humidex -32)/1.8,3);
+                        $windchill = is_null($windchill) ? NULL : (float) round(($windchill -32)/1.8,3);
+                        $Tx =        is_null($Tx) ? NULL : (float)round(($Tx  -32)/1.8,3);
+                        $Tn =        is_null($Tn) ? NULL : (float)round(($Tn -32)/1.8,3);
 
 
+                        //ExtraTemp//
+                        $extraTemp1 = is_null($extraTemp1) ? NULL : (float)round(($extraTemp1 -32)/1.8,3);
+                        $extraTemp2 = is_null($extraTemp2) ? NULL : (float) round(($extraTemp2 -32)/1.8,3);
+                        $extraTemp3 = is_null($extraTemp3) ? NULL : (float) round(($extraTemp3 -32)/1.8,3);
+                        $extraTemp4 = is_null($extraTemp4) ? NULL : (float)round(($extraTemp4 -32)/1.8,3);
+                        $extraTemp5 = is_null($extraTemp5) ? NULL : (float)round(($extraTemp5 -32)/1.8,3);
+                        $extraTemp6 = is_null($extraTemp6) ? NULL : (float)round(($extraTemp6 -32)/1.8,3);
+                        $extraTemp7 = is_null($extraTemp7) ? NULL : (float)round(($extraTemp7 -32)/1.8,3);
+                        $extraTemp8 = is_null($extraTemp8) ? NULL : (float)round(($extraTemp8 -32)/1.8,3);
 
-                            //Wind//
-                            $windGust = is_null($windGust) ? NULL : (float) round($windGust *1.60934,3);
-                            $windSpeed =is_null($windSpeed) ? NULL : (float) round($windSpeed *1.60934,3);
-                            $Gust_max = is_null($Gust_max) ? NULL : (float) round($Gust_max *1.60934,3);
-                           
-
-                            //Pressure//
-                            $altimeter =is_null($altimeter) ? NULL : (float) round($altimeter * 33.8639,3);
-                            $barometer =is_null($barometer) ? NULL : (float) round($barometer * 33.8639,3);
-                            $pressure = is_null($pressure) ? NULL : (float) round($pressure * 33.8639,3);
-                            $trend_bar =is_null($trend_bar) ? NULL : (float) round($trend_bar * 33.8639,3);
-
-                            //Humidity 
-                            $outHumidity =is_null($outHumidity) ? NULL : (float) round($outHumidity, 1);
-                            $inHumidity =is_null($inHumidity) ? NULL : (float) round($inHumidity, 1);
-
-                            //leafWet//
-
-                            $leafWet1 =is_null($leafWet1) ? NULL : (float) round($leafWet1, 1);
-                            $leafWet2 =is_null($leafWet2) ? NULL : (float) round($leafWet2, 1);
-
-                            //soilMoist//
-                            $soilMoist1 =is_null($soilMoist1) ? NULL : (float) round($soilMoist1, 1);
-                            $soilMoist2 =is_null($soilMoist2) ? NULL : (float) round($soilMoist2, 1);
-                            $soilMoist3 =is_null($soilMoist3) ? NULL : (float) round($soilMoist3, 1);
-                            $soilMoist4 =is_null($soilMoist4) ? NULL : (float) round($soilMoist4, 1);
+                        //LeafTemp//
+                        $leafTemp1 = is_null($leafTemp1) ? NULL : (float)round(($leafTemp1  -32)/1.8,3);
+                        $leafTemp2 = is_null($leafTemp2) ? NULL : (float) round(($leafTemp2 -32)/1.8,3);
 
 
-                            //ExtraHumid//
-                            $extraHumid1 =is_null($extraHumid1) ? NULL : (float) round($extraHumid1, 1);
-                            $extraHumid2 =is_null($extraHumid2) ? NULL : (float) round($extraHumid2, 1);
-                            $extraHumid3 =is_null($extraHumid3) ? NULL : (float) round($extraHumid3, 1);
-                            $extraHumid4 =is_null($extraHumid4) ? NULL : (float) round($extraHumid4, 1);
-                            $extraHumid5 =is_null($extraHumid5) ? NULL : (float) round($extraHumid5, 1);
-                            $extraHumid6 =is_null($extraHumid6) ? NULL : (float) round($extraHumid6, 1);
-                            $extraHumid7 =is_null($extraHumid7) ? NULL : (float) round($extraHumid7, 1);
-                            $extraHumid8 =is_null($extraHumid8) ? NULL : (float) round($extraHumid8, 1);
 
-                        } elseif ($usUnits == 17) {
+                        //Wind//
+                        $windGust = is_null($windGust) ? NULL : (float) round($windGust *1.60934,3);
+                        $windSpeed =is_null($windSpeed) ? NULL : (float) round($windSpeed *1.60934,3);
+                        $Gust_max = is_null($Gust_max) ? NULL : (float) round($Gust_max *1.60934,3);
+                    
 
-                            //Rain//
-                            $rainmonth =is_null($rainmonth) ? NULL : (float) round($rainmonth ,3);
-                            $rainyear = is_null($rainyear) ? NULL : (float) round($rainyear ,3);
-                            $rainRate = is_null($rainRate) ? NULL : (float) round($rainRate ,3);
-                            $rain =     is_null($rain) ? NULL : (float) round($rain ,3);
-                            $Rain_max =     is_null($Rain_max) ? NULL : (float) round($Rain_max ,3);
+                        //Pressure//
+                        $altimeter =is_null($altimeter) ? NULL : (float) round($altimeter * 33.8639,3);
+                        $barometer =is_null($barometer) ? NULL : (float) round($barometer * 33.8639,3);
+                        $pressure = is_null($pressure) ? NULL : (float) round($pressure * 33.8639,3);
+                        $trend_bar =is_null($trend_bar) ? NULL : (float) round($trend_bar * 33.8639,3);
 
+                        //Humidity 
+                        $outHumidity =is_null($outHumidity) ? NULL : (float) round($outHumidity, 1);
+                        $inHumidity =is_null($inHumidity) ? NULL : (float) round($inHumidity, 1);
 
-                            //Temp//
-                            $appTemp =  is_null($appTemp) ? NULL : (float)round(($appTemp,3);
-                            $windchill =is_null($windchill) ? NULL : (float) round(($windchill,3);
-                            $heatindex =is_null($heatindex) ? NULL : (float) round(($heatindex,3);
-                            $dewpoint = is_null($dewpoint) ? NULL : (float) round(($dewpoint,3);
-                            $outTemp =  is_null($outTemp) ? NULL : (float) round(($outTemp,3);
-                            $inTemp =   is_null($inTemp) ? NULL : (float) round(($inTemp,3);
-                            $inDewpoint =is_null($inDewpoint) ? NULL : (float) round(($inDewpoint,3);
-                            $humidex =  is_null($humidex) ? NULL : (float) round(($humidex,3);
-                            $windchill = is_null($windchill) ? NULL : (float)round(($windchill,3);
-                            $Tx =        is_null($Tx) ? NULL : (float)round(($Tx,3);
-                            $Tn =        is_null($Tn) ? NULL : (float)round(($Tn,3);
+                        //leafWet//
 
-                            //ExtraTemp//
-                            $extraTemp1 =is_null($extraTemp1) ? NULL : (float) round(($extraTemp1,3);
-                            $extraTemp2 =is_null($extraTemp2) ? NULL : (float) round(($extraTemp2,3);
-                            $extraTemp3 =is_null($extraTemp3) ? NULL : (float) round(($extraTemp3,3);
-                            $extraTemp4 =is_null($extraTemp4) ? NULL : (float) round(($extraTemp4,3);
-                            $extraTemp5 =is_null($extraTemp5) ? NULL : (float) round(($extraTemp5,3);
-                            $extraTemp6 =is_null($extraTemp6) ? NULL : (float)round(($extraTemp6,3);
-                            $extraTemp7 =is_null($extraTemp7) ? NULL : (float) round(($extraTemp7,3);
-                            $extraTemp8 =is_null($extraTemp8) ? NULL : (float) round(($extraTemp8,3);
+                        $leafWet1 =is_null($leafWet1) ? NULL : (float) round($leafWet1, 1);
+                        $leafWet2 =is_null($leafWet2) ? NULL : (float) round($leafWet2, 1);
 
-                            //LeafTemp//
-                            $leafTemp1 =is_null($leafTemp1) ? NULL : (float) round(($leafTemp1 ,3);
-                            $leafTemp2 =is_null($leafTemp2) ? NULL : (float) round(($leafTemp2,3);
-
-                            //Wind//
-                            $windGust =is_null($windGust) ? NULL : (float) round($windGust *3.6,3);
-                            $windSpeed=is_null($windSpeed) ? NULL : (float) round($windSpeed *3.6,3);
-                            $Gust_max = is_null($Gust_max) ? NULL : (float) round($Gust_max *3.6,3);
-
-                            //Pressure//
-                            $altimeter =is_null($altimeter) ? NULL : (float) round($altimeter , 3);
-                            $barometer =is_null($barometer) ? NULL : (float) round($barometer , 3);
-                            $pressure =is_null($pressure) ? NULL : (float) round($pressure , 3);
-                            $trend_bar =is_null($trend_bar) ? NULL : (float) round($trend_bar , 3);
-
-                            //Humidity 
-                            $outHumidity =is_null($outHumidity) ? NULL : (float) round($outHumidity, 1);
-                            $inHumidity =is_null($inHumidity) ? NULL : (float) round($inHumidity, 1);
-
-                            //leafWet//
-
-                            $leafWet1 =is_null($leafWet1) ? NULL : (float) round($leafWet1, 1);
-                            $leafWet2 =is_null($leafWet2) ? NULL : (float) round($leafWet2, 1);
-
-                            //soilMoist//
-                            $soilMoist1 =is_null($soilMoist1) ? NULL : (float) round($soilMoist1, 1);
-                            $soilMoist2 =is_null($soilMoist2) ? NULL : (float) round($soilMoist2, 1);
-                            $soilMoist3 =is_null($soilMoist3) ? NULL : (float) round($soilMoist3, 1);
-                            $soilMoist4 =is_null($soilMoist4) ? NULL : (float) round($soilMoist4, 1);
-
-                            //ExtraHumid//
-                            $extraHumid1 =is_null($extraHumid1) ? NULL : (float) round($extraHumid1, 1);
-                            $extraHumid2 =is_null($extraHumid2) ? NULL : (float) round($extraHumid2, 1);
-                            $extraHumid3 =is_null($extraHumid3) ? NULL : (float) round($extraHumid3, 1);
-                            $extraHumid4 =is_null($extraHumid4) ? NULL : (float) round($extraHumid4, 1);
-                            $extraHumid5 =is_null($extraHumid5) ? NULL : (float) round($extraHumid5, 1);
-                            $extraHumid6 =is_null($extraHumid6) ? NULL : (float) round($extraHumid6, 1);
-                            $extraHumid7 =is_null($extraHumid7) ? NULL : (float) round($extraHumid7, 1);
-                            $extraHumid8 =is_null($extraHumid8) ? NULL : (float) round($extraHumid8, 1);
-
-                        } elseif ($usUnits == 16)  {
-
-                            $rainmonth =is_null($rainmonth) ? NULL : (float) round($rainmonth, *10,3);
-                            $rainyear =is_null($rainyear) ? NULL : (float) round($rainyear, *10,3);
-                            $rainRate =is_null($rainRate) ? NULL : (float) round($rainRate, *10,3);
-                            $rain =is_null($rain) ? NULL : (float) round($rain, *10,3);
-                            $Rain_max =is_null($Rain_max) ? NULL : (float) round($Rain_max, *10,3);
-                            
-
-                            //Temp//
-                            $appTemp =is_null($appTemp) ? NULL : (float) round($appTemp, 3);
-                            $windchill =is_null($windchill) ? NULL : (float) round($windchill, 3);
-                            $heatindex =is_null($heatindex) ? NULL : (float) round($heatindex, 3);
-                            $dewpoint =is_null($dewpoint) ? NULL : (float) round($dewpoint, 3);
-                            $outTemp =is_null($outTemp) ? NULL : (float) round($outTemp, 3);
-                            $inTemp =is_null($inTemp) ? NULL : (float) round($inTemp, 3);
-                            $inDewpoint =is_null($inDewpoint) ? NULL : (float) round($inDewpoint, 3);
-                            $humidex =is_null($humidex) ? NULL : (float) round($humidex, 3);
-                            $windchill =is_null($windchill) ? NULL : (float) round($windchill, 3);
-                            $Tx =is_null($Tx) ? NULL : (float) round($Tx, 3);
-                            $Tn =is_null($Tn) ? NULL : (float) round($Tn, 3);
-                            
-
-                            //ExtraTemp//
-                            $extraTemp1 =is_null($extraTemp1) ? NULL : (float) round($extraTemp1, 3);
-                            $extraTemp2 =is_null($extraTemp2) ? NULL : (float) round($extraTemp2, 3);
-                            $extraTemp3 =is_null($extraTemp3) ? NULL : (float) round($extraTemp3, 3);
-                            $extraTemp4 =is_null($extraTemp4) ? NULL : (float) round($extraTemp4, 3);
-                            $extraTemp5 =is_null($extraTemp5) ? NULL : (float) round($extraTemp5, 3);
-                            $extraTemp6 =is_null($extraTemp6) ? NULL : (float) round($extraTemp6, 3);
-                            $extraTemp7 =is_null($extraTemp7) ? NULL : (float) round($extraTemp7, 3);
-                            $extraTemp8 =is_null($extraTemp8) ? NULL : (float) round($extraTemp8, 3);
-
-                            //LeafTemp//
-                            $leafTemp1 =is_null($leafTemp1) ? NULL : (float) round($leafTemp1, 3);
-                            $leafTemp2 =is_null($leafTemp2) ? NULL : (float) round($leafTemp2, 3);
-
-                            //soilTemp//
-                            $soilTemp1 =is_null($soilTemp1) ? NULL : (float) round($soilTemp1, 1);
-                            $soilTemp2 =is_null($soilTemp2) ? NULL : (float) round($soilTemp2, 1);
-                            $soilTemp3 =is_null($soilTemp3) ? NULL : (float) round($soilTemp3, 1);
-                            $soilTemp4 =is_null($soilTemp4) ? NULL : (float) round($soilTemp4, 1);
+                        //soilMoist//
+                        $soilMoist1 =is_null($soilMoist1) ? NULL : (float) round($soilMoist1, 1);
+                        $soilMoist2 =is_null($soilMoist2) ? NULL : (float) round($soilMoist2, 1);
+                        $soilMoist3 =is_null($soilMoist3) ? NULL : (float) round($soilMoist3, 1);
+                        $soilMoist4 =is_null($soilMoist4) ? NULL : (float) round($soilMoist4, 1);
 
 
-                            //Wind//
-                            $windGust =is_null($windGust) ? NULL : (float) round($windGust, 3);
-                            $windSpeed =is_null($windSpeed) ? NULL : (float) round($windSpeed, 3);
-                            $Gust_max =is_null($Gust_max) ? NULL : (float) round($Gust_max, 3);
+                        //ExtraHumid//
+                        $extraHumid1 =is_null($extraHumid1) ? NULL : (float) round($extraHumid1, 1);
+                        $extraHumid2 =is_null($extraHumid2) ? NULL : (float) round($extraHumid2, 1);
+                        $extraHumid3 =is_null($extraHumid3) ? NULL : (float) round($extraHumid3, 1);
+                        $extraHumid4 =is_null($extraHumid4) ? NULL : (float) round($extraHumid4, 1);
+                        $extraHumid5 =is_null($extraHumid5) ? NULL : (float) round($extraHumid5, 1);
+                        $extraHumid6 =is_null($extraHumid6) ? NULL : (float) round($extraHumid6, 1);
+                        $extraHumid7 =is_null($extraHumid7) ? NULL : (float) round($extraHumid7, 1);
+                        $extraHumid8 =is_null($extraHumid8) ? NULL : (float) round($extraHumid8, 1);
 
-                            //Pressure//
-                            $altimeter =is_null($altimeter) ? NULL : (float) round($altimeter, 3);
-                            $barometer =is_null($barometer) ? NULL : (float) round($barometer, 3);
-                            $pressure =is_null($pressure) ? NULL : (float) round($pressure, 3);
-                            $trend_bar =is_null($trend_bar) ? NULL : (float) round($trend_bar, 3);
+                    } elseif ($usUnits == 17) {
 
-                            //Humidity 
-                            $outHumidity =is_null($outHumidity) ? NULL : (float) round($outHumidity, 1);
-                            $inHumidity =is_null($inHumidity) ? NULL : (float) round($inHumidity, 1);
-
-                            //leafWet//
-
-                            $leafWet1 =is_null($leafWet1) ? NULL : (float) round($leafWet1, 1);
-                            $leafWet2 =is_null($leafWet2) ? NULL : (float) round($leafWet2, 1);
-
-                            //soilMoist//
-                            $soilMoist1 =is_null($soilMoist1) ? NULL : (float) round($soilMoist1, 1);
-                            $soilMoist2 =is_null($soilMoist2) ? NULL : (float) round($soilMoist2, 1);
-                            $soilMoist3 =is_null($soilMoist3) ? NULL : (float) round($soilMoist3, 1);
-                            $soilMoist4 =is_null($soilMoist4) ? NULL : (float) round($soilMoist4, 1);
+                        //Rain//
+                        $rainmonth =is_null($rainmonth) ? NULL : (float) round($rainmonth ,3);
+                        $rainyear = is_null($rainyear) ? NULL : (float) round($rainyear ,3);
+                        $rainRate = is_null($rainRate) ? NULL : (float) round($rainRate ,3);
+                        $rain =     is_null($rain) ? NULL : (float) round($rain ,3);
+                        $Rain_max =     is_null($Rain_max) ? NULL : (float) round($Rain_max ,3);
 
 
-                            //ExtraHumid//
-                            $extraHumid1 =is_null($extraHumid1) ? NULL : (float) round($extraHumid1, 1);
-                            $extraHumid2 =is_null($extraHumid2) ? NULL : (float) round($extraHumid2, 1);
-                            $extraHumid3 =is_null($extraHumid3) ? NULL : (float) round($extraHumid3, 1);
-                            $extraHumid4 =is_null($extraHumid4) ? NULL : (float) round($extraHumid4, 1);
-                            $extraHumid5 =is_null($extraHumid5) ? NULL : (float) round($extraHumid5, 1);
-                            $extraHumid6 =is_null($extraHumid6) ? NULL : (float) round($extraHumid6, 1);
-                            $extraHumid7 =is_null($extraHumid7) ? NULL : (float) round($extraHumid7, 1);
-                            $extraHumid8 =is_null($extraHumid8) ? NULL : (float) round($extraHumid8, 1);
-                        }
+                        //Temp//
+                        $appTemp =  is_null($appTemp) ? NULL : (float)round($appTemp,3);
+                        $windchill =is_null($windchill) ? NULL : (float) round($windchill,3);
+                        $heatindex =is_null($heatindex) ? NULL : (float) round($heatindex,3);
+                        $dewpoint = is_null($dewpoint) ? NULL : (float) round($dewpoint,3);
+                        $outTemp =  is_null($outTemp) ? NULL : (float) round($outTemp,3);
+                        $inTemp =   is_null($inTemp) ? NULL : (float) round($inTemp,3);
+                        $inDewpoint =is_null($inDewpoint) ? NULL : (float) round($inDewpoint,3);
+                        $humidex =  is_null($humidex) ? NULL : (float) round($humidex,3);
+                        $windchill = is_null($windchill) ? NULL : (float)round($windchill,3);
+                        $Tx =        is_null($Tx) ? NULL : (float)round($Tx,3);
+                        $Tn =        is_null($Tn) ? NULL : (float)round($Tn,3);
+
+                        //ExtraTemp//
+                        $extraTemp1 =is_null($extraTemp1) ? NULL : (float) round($extraTemp1,3);
+                        $extraTemp2 =is_null($extraTemp2) ? NULL : (float) round($extraTemp2,3);
+                        $extraTemp3 =is_null($extraTemp3) ? NULL : (float) round($extraTemp3,3);
+                        $extraTemp4 =is_null($extraTemp4) ? NULL : (float) round($extraTemp4,3);
+                        $extraTemp5 =is_null($extraTemp5) ? NULL : (float) round($extraTemp5,3);
+                        $extraTemp6 =is_null($extraTemp6) ? NULL : (float)round($extraTemp6,3);
+                        $extraTemp7 =is_null($extraTemp7) ? NULL : (float) round($extraTemp7,3);
+                        $extraTemp8 =is_null($extraTemp8) ? NULL : (float) round($extraTemp8,3);
+
+                        //LeafTemp//
+                        $leafTemp1 =is_null($leafTemp1) ? NULL : (float) round($leafTemp1 ,3);
+                        $leafTemp2 =is_null($leafTemp2) ? NULL : (float) round($leafTemp2,3);
+
+                        //Wind//
+                        $windGust =is_null($windGust) ? NULL : (float) round($windGust *3.6,3);
+                        $windSpeed=is_null($windSpeed) ? NULL : (float) round($windSpeed *3.6,3);
+                        $Gust_max = is_null($Gust_max) ? NULL : (float) round($Gust_max *3.6,3);
+
+                        //Pressure//
+                        $altimeter =is_null($altimeter) ? NULL : (float) round($altimeter , 3);
+                        $barometer =is_null($barometer) ? NULL : (float) round($barometer , 3);
+                        $pressure =is_null($pressure) ? NULL : (float) round($pressure , 3);
+                        $trend_bar =is_null($trend_bar) ? NULL : (float) round($trend_bar , 3);
+
+                        //Humidity 
+                        $outHumidity =is_null($outHumidity) ? NULL : (float) round($outHumidity, 1);
+                        $inHumidity =is_null($inHumidity) ? NULL : (float) round($inHumidity, 1);
+
+                        //leafWet//
+
+                        $leafWet1 =is_null($leafWet1) ? NULL : (float) round($leafWet1, 1);
+                        $leafWet2 =is_null($leafWet2) ? NULL : (float) round($leafWet2, 1);
+
+                        //soilMoist//
+                        $soilMoist1 =is_null($soilMoist1) ? NULL : (float) round($soilMoist1, 1);
+                        $soilMoist2 =is_null($soilMoist2) ? NULL : (float) round($soilMoist2, 1);
+                        $soilMoist3 =is_null($soilMoist3) ? NULL : (float) round($soilMoist3, 1);
+                        $soilMoist4 =is_null($soilMoist4) ? NULL : (float) round($soilMoist4, 1);
+
+                        //ExtraHumid//
+                        $extraHumid1 =is_null($extraHumid1) ? NULL : (float) round($extraHumid1, 1);
+                        $extraHumid2 =is_null($extraHumid2) ? NULL : (float) round($extraHumid2, 1);
+                        $extraHumid3 =is_null($extraHumid3) ? NULL : (float) round($extraHumid3, 1);
+                        $extraHumid4 =is_null($extraHumid4) ? NULL : (float) round($extraHumid4, 1);
+                        $extraHumid5 =is_null($extraHumid5) ? NULL : (float) round($extraHumid5, 1);
+                        $extraHumid6 =is_null($extraHumid6) ? NULL : (float) round($extraHumid6, 1);
+                        $extraHumid7 =is_null($extraHumid7) ? NULL : (float) round($extraHumid7, 1);
+                        $extraHumid8 =is_null($extraHumid8) ? NULL : (float) round($extraHumid8, 1);
+
+                    } elseif ($usUnits == 16)  {
+
+                        $rainmonth =is_null($rainmonth) ? NULL : (float) round($rainmonth *10,3);
+                        $rainyear =is_null($rainyear) ? NULL : (float) round($rainyear *10,3);
+                        $rainRate =is_null($rainRate) ? NULL : (float) round($rainRate *10,3);
+                        $rain =is_null($rain) ? NULL : (float) round($rain *10,3);
+                        $Rain_max =is_null($Rain_max) ? NULL : (float) round($Rain_max *10,3);
+                        
+
+                        //Temp//
+                        $appTemp =is_null($appTemp) ? NULL : (float) round($appTemp, 3);
+                        $windchill =is_null($windchill) ? NULL : (float) round($windchill, 3);
+                        $heatindex =is_null($heatindex) ? NULL : (float) round($heatindex, 3);
+                        $dewpoint =is_null($dewpoint) ? NULL : (float) round($dewpoint, 3);
+                        $outTemp =is_null($outTemp) ? NULL : (float) round($outTemp, 3);
+                        $inTemp =is_null($inTemp) ? NULL : (float) round($inTemp, 3);
+                        $inDewpoint =is_null($inDewpoint) ? NULL : (float) round($inDewpoint, 3);
+                        $humidex =is_null($humidex) ? NULL : (float) round($humidex, 3);
+                        $windchill =is_null($windchill) ? NULL : (float) round($windchill, 3);
+                        $Tx =is_null($Tx) ? NULL : (float) round($Tx, 3);
+                        $Tn =is_null($Tn) ? NULL : (float) round($Tn, 3);
+                        
+
+                        //ExtraTemp//
+                        $extraTemp1 =is_null($extraTemp1) ? NULL : (float) round($extraTemp1, 3);
+                        $extraTemp2 =is_null($extraTemp2) ? NULL : (float) round($extraTemp2, 3);
+                        $extraTemp3 =is_null($extraTemp3) ? NULL : (float) round($extraTemp3, 3);
+                        $extraTemp4 =is_null($extraTemp4) ? NULL : (float) round($extraTemp4, 3);
+                        $extraTemp5 =is_null($extraTemp5) ? NULL : (float) round($extraTemp5, 3);
+                        $extraTemp6 =is_null($extraTemp6) ? NULL : (float) round($extraTemp6, 3);
+                        $extraTemp7 =is_null($extraTemp7) ? NULL : (float) round($extraTemp7, 3);
+                        $extraTemp8 =is_null($extraTemp8) ? NULL : (float) round($extraTemp8, 3);
+
+                        //LeafTemp//
+                        $leafTemp1 =is_null($leafTemp1) ? NULL : (float) round($leafTemp1, 3);
+                        $leafTemp2 =is_null($leafTemp2) ? NULL : (float) round($leafTemp2, 3);
+
+                        //soilTemp//
+                        $soilTemp1 =is_null($soilTemp1) ? NULL : (float) round($soilTemp1, 1);
+                        $soilTemp2 =is_null($soilTemp2) ? NULL : (float) round($soilTemp2, 1);
+                        $soilTemp3 =is_null($soilTemp3) ? NULL : (float) round($soilTemp3, 1);
+                        $soilTemp4 =is_null($soilTemp4) ? NULL : (float) round($soilTemp4, 1);
+
+
+                        //Wind//
+                        $windGust =is_null($windGust) ? NULL : (float) round($windGust, 3);
+                        $windSpeed =is_null($windSpeed) ? NULL : (float) round($windSpeed, 3);
+                        $Gust_max =is_null($Gust_max) ? NULL : (float) round($Gust_max, 3);
+
+                        //Pressure//
+                        $altimeter =is_null($altimeter) ? NULL : (float) round($altimeter, 3);
+                        $barometer =is_null($barometer) ? NULL : (float) round($barometer, 3);
+                        $pressure =is_null($pressure) ? NULL : (float) round($pressure, 3);
+                        $trend_bar =is_null($trend_bar) ? NULL : (float) round($trend_bar, 3);
+
+                        //Humidity 
+                        $outHumidity =is_null($outHumidity) ? NULL : (float) round($outHumidity, 1);
+                        $inHumidity =is_null($inHumidity) ? NULL : (float) round($inHumidity, 1);
+
+                        //leafWet//
+
+                        $leafWet1 =is_null($leafWet1) ? NULL : (float) round($leafWet1, 1);
+                        $leafWet2 =is_null($leafWet2) ? NULL : (float) round($leafWet2, 1);
+
+                        //soilMoist//
+                        $soilMoist1 =is_null($soilMoist1) ? NULL : (float) round($soilMoist1, 1);
+                        $soilMoist2 =is_null($soilMoist2) ? NULL : (float) round($soilMoist2, 1);
+                        $soilMoist3 =is_null($soilMoist3) ? NULL : (float) round($soilMoist3, 1);
+                        $soilMoist4 =is_null($soilMoist4) ? NULL : (float) round($soilMoist4, 1);
+
+
+                        //ExtraHumid//
+                        $extraHumid1 =is_null($extraHumid1) ? NULL : (float) round($extraHumid1, 1);
+                        $extraHumid2 =is_null($extraHumid2) ? NULL : (float) round($extraHumid2, 1);
+                        $extraHumid3 =is_null($extraHumid3) ? NULL : (float) round($extraHumid3, 1);
+                        $extraHumid4 =is_null($extraHumid4) ? NULL : (float) round($extraHumid4, 1);
+                        $extraHumid5 =is_null($extraHumid5) ? NULL : (float) round($extraHumid5, 1);
+                        $extraHumid6 =is_null($extraHumid6) ? NULL : (float) round($extraHumid6, 1);
+                        $extraHumid7 =is_null($extraHumid7) ? NULL : (float) round($extraHumid7, 1);
+                        $extraHumid8 =is_null($extraHumid8) ? NULL : (float) round($extraHumid8, 1);
+                    }
                         //Utilisateur//
                         $user = [
 
