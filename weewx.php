@@ -283,7 +283,7 @@ class Weewx
         if ($datenow >= '06:01') {
             $date = strtotime(gmdate('d-m-Y 06:00:00 ', strtotime(' + 1 days')));
         } else {
-            $date = gmdate('d-m-Y H:i:00');
+            $date = strtotime(gmdate('d-m-Y H:i:00'));
         }
 
         $datestart = $date;
@@ -449,7 +449,7 @@ class Weewx
     public function historic(){
         // On écrit la requête
         // On écrit la requête
-        $sql = "SELECT * FROM " . $this->table .  " WHERE dateTime BETWEEN :dateTime AND :dateTime1 ";
+        $sql = "SELECT * FROM " . $this->table .  "  NATURAL JOIN " . $this->tableuser . " WHERE dateTime BETWEEN :dateTime AND :dateTime1 ";
         
         // On prépare la requête
         $query = $this->connexion->prepare( $sql );
